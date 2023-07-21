@@ -11,19 +11,19 @@
   <script src="https://kit.fontawesome.com/2ab099f38c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="h-screen">
-  <section class=" ransform transition-all duration-300 main-section flex dark:bg-gray-800">
+<body class="bg-gray-100">
+  <section class="ransform transition-all duration-300 main-section flex min-h-screen dark:bg-gray-800">
     <div class="left-section basis-0 sm:basis-1/2 contrast-200 brightness-50 grayscale-0 ">
 
     </div>
-    <div class="right-section h-screen basis-1 sm:basis-1/2 flex justify-center m-auto">
+    <div class="right-section basis-1 sm:basis-1/2 flex justify-center m-auto">
       <div class="login-reg m-auto lg:w-full justify-center p-16 ">
-        <h2 class="text-2xl w-full sm:w-96 dark:text-sky-500 font-semibold space-x-1">Lorem ipsum dolor sit amet
+        <h2 class="text-2xl  w-64 sm:w-96 dark:text-sky-500 font-semibold space-x-1">Lorem ipsum dolor sit amet
           consectetur
           adipisicing elit.
           Fugit, dolorum!
         </h2>
-        <p class="text-amber-600 font-medium text-2xl mt-5">Lorem ipsum dolor sit amet.</p>
+        <p class="text-amber-600 font-medium text-2xl mt-5 w-64 sm:w-96">Lorem ipsum dolor sit amet.</p>
         <div class="nav flex gap-5 mb-5">
           <a id="login-button"
             class="text-green-600 font-bold border-b-4 border-transparent transform transition-all duration-150 hover:border-green-400 active:border-green-600 focus:border-green-400 p-3"
@@ -32,6 +32,22 @@
             class="text-green-600 font-bold border-b-4 border-transparent hover:border-green-400 focus:border-green-400 active:border-green-600 p-3 transform transition-all duration-150"
             href="#">Registration</a>
         </div>
+        <!-- alert message box -->
+        <div id="alert">
+          <!-- <div class="alert-box transform transition-all duration-500 w-96 bg-red-400 flex p-2 items-center">
+                      <div class="icon mr-3">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                      </div>
+                      <div class="massage">
+                        <p class="text-orange-200">Lorem ipsum do Lorem ipsum dolor sit amet. lor g elit. Illum, cupiditate.
+                        </p>
+                      </div>
+                      <div class="close-button ml-3 transform transition-all cursor-pointer hover:text-orange-600 duration-300">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                      </div>
+                    </div> -->
+        </div>
+        <!-- alert message box -->
 
         <!-- login form design -->
 
@@ -42,13 +58,21 @@
           <form id="login" class="overflow-none" action="#" autocomplete="off">
             <input
               class="pl-2 p-2 mb-2 mr-2  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
-              type="text" name="name" placeholder="Username">
+              type="text" name="username_email" placeholder="Username or Email">
             <input
               class="pl-2 p-2 mb-2 mr-2  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
-              type="password" name="password" placeholder="password">
+              type="password" id="login-password" name="password" placeholder="password">
+            <div class="passwordtoggle">
+              <i class="fa-solid fa-eye-slash mr-2 text-green-500 cursor-pointer hover:text-green-300"
+                id="loginFormPasswordToggler"></i>
+              <label for="passShow" class="pr-3 text-sky-200">Show
+                Password</label>
+
+            </div>
             <br>
-            <a class="transform duration-150 mt-4 bg-green-400 py-2 px-12 rounded-full text-gray-800 hover:bg-green-500 hover:text-gray-500 mb-3"
-              type="submit">Login</a>
+            <input
+              class="transform duration-150 mt-4 bg-green-400 py-2 px-12 rounded-full text-gray-800 hover:bg-green-500 hover:text-gray-500 mb-3"
+              type="submit" value="Login">
           </form>
           <a class="text-gray-500 dark:text-gray-200 mb-5 transform transition-all duration-150 hover:underline hover:text-green-500"
             href="#">Forgot password
@@ -72,57 +96,42 @@
         <!-- registration form design -->
         <div class="registration-section hidden mt-10">
 
-          <!-- alert message box -->
-          <div id="alert">
-            <!-- <div class="alert-box transform transition-all duration-500 w-96 bg-red-400 flex p-2 items-center">
-              <div class="icon mr-3">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </div>
-              <div class="massage">
-                <p class="text-orange-200">Lorem ipsum do Lorem ipsum dolor sit amet. lor g elit. Illum, cupiditate.
-                </p>
-              </div>
-              <div class="close-button ml-3 transform transition-all cursor-pointer hover:text-orange-600 duration-300">
-                <i class="fa-regular fa-circle-xmark"></i>
-              </div>
-            </div> -->
-          </div>
-          <!-- alert message box -->
+
           <form action="" id="registration" class="w-96">
-            <div class=" name-group flex w-11/12 mt-2">
+            <div class="name-group  mt-2">
               <input
-                class="pl-2 p-2 mb-2 mr-2  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
+                class="pl-2 p-2 mb-2 mr-2 sm:w-64 md:w-64  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
                 type="text" name="f_name" placeholder="First Name">
               <input
-                class="pl-2  p-2 mb-2 mr-2  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
+                class="pl-2  p-2 mb-2 mr-2 sm:w-64 md:w-64  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
                 type="text" name="l_name" placeholder="Last Name">
             </div>
-            <div class="email-username flex w-11/12 mt-2">
+            <div class="email-username mt-2">
               <input
-                class="pl-2  p-2 mb-2 mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
+                class="pl-2  p-2 mb-2 mr-2 sm:w-64 md:w-64  bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
                 type="text" name="username" id="username" placeholder="Username">
               <input
-                class="pl-2  p-2 mb-2 mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
+                class="pl-2  p-2 mb-2 sm:w-64 md:w-64  mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
                 type="text" name="email" id="email" placeholder="Email">
             </div>
-            <div class="password-group flex w-11/12 mt-2">
+            <div class="password-group mt-2">
               <input
-                class="pl-2  p-2 mb-2 mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
+                class="pl-2 p-2 mb-2 sm:w-64 md:w-64  mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold"
                 type="password" name="password" id="password" placeholder="Password">
               <input
-                class="pl-2  p-2 mb-2 mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold "
+                class="pl-2  p-2 mb-2 sm:w-64 md:w-64  mr-2 bg-inherit border-sky-200 focus:border-inherit focus:outline-none border-b text-white font-semibold "
                 type="password" name="con_password" id="con-password" placeholder="Confirm Password">
             </div>
             <div class="passwordtoggle">
               <i class="fa-solid fa-eye-slash mr-2 text-green-500 cursor-pointer hover:text-green-300"
                 id="passShow"></i>
-              <label for="pass" class="pr-3 text-sky-200">Show
+              <label for="passShow" class="pr-3 text-sky-200">Show
                 Password</label>
 
             </div>
             <div class="agree-box flex mt-5 ">
               <input type="checkbox" name="agreed" id="agreed" value="false">
-              <p class="text-sky-300 ml-2">I have read all the <a href="#"
+              <p class="text-sky-300 ml-2 w-44 md:w-full">I have read all the <a href="#"
                   class="text-green-600 transform transition-all hover:underline duration-150">Terms &
                   Conditions</a>
                 and agreed</p>
@@ -156,6 +165,8 @@
   <script src="./src/js/functions.js"></script>
   <script src="./src/js/index.js"></script>
   <script src="./src/js/registration.js"></script>
+  <script src="./src/js/login.js"></script>
+  <script src="./src/js/dashboard.js"></script>
   <script src="./src/js/alert.js"></script>
 </body>
 

@@ -20,7 +20,7 @@ function validatePassword(password) {
   return pattern.test(password);
 }
 
-//
+// Warning alert massage function
 
 function WarnalertMassage(massage) {
   return `
@@ -41,6 +41,7 @@ function WarnalertMassage(massage) {
 
 `;
 }
+//success message
 function successalertMassage(massage) {
   return `
   <div class="alert-box transform transition-all duration-500 w-96 bg-green-300 flex p-2 items-center">
@@ -60,3 +61,28 @@ function successalertMassage(massage) {
 
 `;
 }
+
+//data send to local storage
+
+function sendData(key, data) {
+  let userData = [];
+  let lsData = localStorage.getItem(key)
+    ? JSON.parse(localStorage.getItem(key))
+    : null;
+  if (!lsData) {
+    userData.push(data);
+    localStorage.setItem(key, JSON.stringify(userData));
+  } else {
+    userData = JSON.parse(localStorage.getItem(key));
+    userData.push(data);
+    localStorage.setItem(key, JSON.stringify(userData));
+  }
+}
+
+//data get from localStorage
+function getData(key) {
+  return localStorage.getItem(key)
+    ? JSON.parse(localStorage.getItem(key))
+    : false;
+}
+
